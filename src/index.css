@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Letter Magic";
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url("/fonts/letter-magic.ttf") format("truetype");
+  }
+
+  @font-face {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400 600 700;
+    font-display: optional;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  .h0 {
+    @apply font-primary text-3xl font-bold md:text-5xl;
+  }
+
+  h1,
+  .h1 {
+    @apply font-primary text-2xl font-bold md:text-4xl;
+  }
+
+  h2,
+  .h2 {
+    @apply font-primary text-xl font-bold md:text-3xl;
+  }
+
+  h3,
+  .h3 {
+    @apply font-primary text-lg font-bold md:text-2xl;
+  }
+
+  h4,
+  .h4 {
+    @apply font-primary text-base font-bold md:text-lg;
+  }
+
+  body,
+  .p {
+    @apply font-primary text-sm md:text-base;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-cblack via-cgreen to-cgreenb bg-clip-text font-magic text-transparent;
+  }
+
+  .btn {
+    @apply rounded-xl px-5 py-3 font-semibold text-cblack shadow transition-all hover:-translate-y-1 hover:shadow-lg active:animate-wiggle active:shadow;
+  }
+
+  .btn-light {
+    @apply bg-clightorange;
+  }
+
+  .btn-gradient {
+    @apply bg-gradient-to-r from-cgreenb to-cgreen;
+  }
+}
