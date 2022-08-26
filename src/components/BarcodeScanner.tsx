@@ -29,11 +29,15 @@ export default function BarcodeScanner({
     const ticket = await fetch(baseUrl, {
       method: "POST",
       body: JSON.stringify({ uniqueId: ticketId }),
+      headers: {
+        "content-type": "application/json",
+      },
     });
     if (!ticket.ok) {
       toast.error("Error");
     }
     const response = await ticket.json();
+    console.log(response);
     if (response.message !== "Ticket successfully redeemed") {
       toast.error(response.message);
       setIsLoading(false);
