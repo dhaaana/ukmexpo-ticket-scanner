@@ -3,7 +3,6 @@ import BarcodeScanner from "./components/BarcodeScanner";
 
 function App() {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
-  const [bookingId, setBookingId] = React.useState<string>("");
   return (
     <>
       <div className="flex min-h-screen items-center justify-center py-12 md:px-12 border-2 ">
@@ -16,19 +15,9 @@ function App() {
             />
           </div>
           <h1 className="text-center mt-10 mb-5">Redeem Ticket</h1>
-          <button
-            onClick={() => setIsOpen(true)}
-            className="btn btn-gradient mx-auto mt-5 mb-14"
-          >
-            Scan Here
-          </button>
+          <BarcodeScanner isOpen={isOpen} setIsOpen={setIsOpen} />
         </div>
       </div>
-      <BarcodeScanner
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
-        setBarcodeId={setBookingId}
-      />
     </>
   );
 }
